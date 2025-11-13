@@ -10,13 +10,10 @@ def get_player_profile_tm(player_url):
         return None
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # Exemple : nom, âge, nationalité
     name = soup.find("h1", class_="data-header__headline").get_text(strip=True)
-    # dépend de la structure réelle de la page
-    # ...
     return {"name": name}
 
-# Exemple d'utilisation
 url = "https://www.transfermarkt.com/lionel-messi/profil/spieler/28003"
 profile = get_player_profile_tm(url)
 print(profile)
+
